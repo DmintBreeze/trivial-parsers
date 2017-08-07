@@ -1,0 +1,41 @@
+name: trivial-parsers
+version: '0.1.0.0'
+category: Example
+author: donnatxj@gmail.com
+maintainer: donnatxj@gmail.com
+license: MIT
+github: typedt/trivial-parsers
+extra-source-files:
+- README.md
+library:
+  source-dirs: src
+  exposed-modules:
+  - Calculator
+  dependencies:
+  - base >=4.7 && <5
+  - parsec
+executables:
+  trivial-parsers-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - base
+    - trivial-parsers
+tests:
+  trivial-parsers-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - base
+    - trivial-parsers
+    - parsec
+    - hspec
+    - QuickCheck
